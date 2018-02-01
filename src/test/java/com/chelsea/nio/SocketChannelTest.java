@@ -8,7 +8,7 @@ import java.nio.channels.SocketChannel;
 import org.junit.Test;
 
 /**
- * SocketChannel客户端
+ * SocketChannel测试类(客户端)
  * 
  * @author shevchenko
  *
