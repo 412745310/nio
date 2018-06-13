@@ -38,7 +38,6 @@ public class ServerSocketChannelTest {
             while (true) {
                 System.out.println("[server] Selector select and blocking ...");
                 selector.select(); // blocking,wait until 1 event
-
                 Set<SelectionKey> keys = selector.selectedKeys(); // not .keys()
                 Iterator<SelectionKey> iter = keys.iterator();
                 while (iter.hasNext()) {
@@ -58,6 +57,7 @@ public class ServerSocketChannelTest {
                         ByteBuffer bf = ByteBuffer.allocate(1000);
                         client.read(bf);
                         System.out.println("-->" + new String(bf.array(), "UTF-8"));
+                        // 取消该键的信道与其选择器的注册
                         key.cancel();
                     } else if (key.isWritable()) {
                         // 不做处理
