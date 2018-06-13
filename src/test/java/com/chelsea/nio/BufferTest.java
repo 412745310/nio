@@ -28,6 +28,8 @@ public class BufferTest {
         // 取出第一个元素
         System.out.println("第一个元素(position=0):" + buff.get());
         System.out.println("取出第一个元素后,position=" + buff.position());
+        System.out.println("第二个元素(position=1):" + buff.get());
+        System.out.println("取出第二个元素后,position=" + buff.position());
         buff.clear();
         System.out.println("执行clear方法后,limit=" + buff.limit());
         System.out.println("执行clear方法后,position=" + buff.position());
